@@ -5,7 +5,6 @@ extend schema
       "@requires",
       "@external",
       "@tag",
-      "@shareable",
       "@override"
     ]
   )
@@ -27,11 +26,9 @@ type User @key(fields: "id") {
   phone: String
     @tag(name: "private")
     @override(from: "orders", label: "percent(50)")
-    @shareable
   email: String!
     @tag(name: "private")
     @override(from: "orders", label: "percent(50)")
-    @shareable
 
   """
   The user's active cart session. Once the cart items have been purchases, they transition to an Order
